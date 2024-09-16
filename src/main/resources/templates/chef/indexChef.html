@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestione Cupcake</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <h1>Operazioni per lo Chef</h1>
+
+    <!-- Gestione Cupcake -->
+    <h2>Gestione Cupcake</h2>
+    <div>
+        <a href="/chef/formNewCupcake">Aggiungi un nuovo Cupcake</a> <!-- Link per il form di aggiunta di un nuovo Cupcake -->
+    </div>
+    <div>
+        <a href="/chef/selectCupcakeToEdit">Modifica un Cupcake esistente</a> <!-- Link per selezionare un Cupcake da modificare -->
+    </div>
+    <div>
+        <a href="/chef/selectCupcakeToDelete">Elimina un Cupcake esistente</a> <!-- Link per selezionare un Cupcake da eliminare -->
+    </div>
+    <div>
+        <a href="/chef/indexCupcakes">Visualizza tutti i Cupcake</a> <!-- Link per visualizzare la lista completa dei Cupcake -->
+    </div>
+
+</body>
+</html>

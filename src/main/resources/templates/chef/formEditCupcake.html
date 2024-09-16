@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifica Cupcake</title>
+    <link rel="stylesheet" href="/static/form.css">
+</head>
+
+<body>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <h1>Modifica Cupcake</h1>
+    <form action="#" th:action="@{/chef/formEditCupcake/{id}(id=${cupcake.id})}" th:object="${cupcake}" method="post">
+        <input type="hidden" th:field="*{id}" />
+
+        <!-- Campi del Cupcake -->
+        <label for="name">Nome:</label>
+        <input type="text" th:field="*{name}" id="name" required />
+
+        <label for="price">Prezzo:</label>
+        <input type="number" step="0.01" th:field="*{price}" id="price" required />
+
+        <button type="submit">Salva Modifiche</button>
+    </form>
+
+    <div class="footer-link">        
+        <a th:href="@{/chef/selectCupcakeToEdit}">Torna indietro</a>
+    </div>
+</body>
+</html>

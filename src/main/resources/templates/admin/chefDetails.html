@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dettagli Chef</title>
+    <link rel="stylesheet" href="/static/index2.css">
+</head>
+<body>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <h1>Dettagli Chef</h1>
+
+    <!-- Sezione per mostrare i dettagli dello Chef -->
+    <div th:if="${chef}">
+        <p><strong>Nome:</strong> <span th:text="${chef.name}"></span></p>
+        <p><strong>Cognome:</strong> <span th:text="${chef.surname}"></span></p>
+        <p><strong>Data di Nascita:</strong> <span th:text="${chef.dateOfBirth}"></span></p>
+        <p><strong>Codice Fiscale:</strong> <span th:text="${chef.cf}"></span></p>
+        <p><strong>Città:</strong> <span th:text="${chef.city}"></span></p>
+    </div>
+
+    <!-- Messaggio se non esiste uno chef -->
+    <div th:unless="${chef}">
+        <p>Chef non trovato</p>
+    </div>
+
+    <!-- Link per tornare alla home admin -->
+    <div class="footer-link">
+        <a href="/admin/indexAdmin">Torna alla Home</a>
+    </div>
+</body>
+</html>

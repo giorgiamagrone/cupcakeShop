@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<link rel="stylesheet" href="/static/error.css">
+<head>
+    <title>Errore</title>
+</head>
+<body>
+    <h1>Errore</h1>
+    
+    <!-- Mostra il messaggio di errore dinamico -->
+    <p th:if="${errorMessage}" th:text="${errorMessage}">Si è verificato un errore.</p>
+    
+    <!-- Pulsante per tornare alla home -->
+    <a href="/" th:href="@{/chef/formNewCupcake}">Torna alla Home</a>
+</body>
+</html>

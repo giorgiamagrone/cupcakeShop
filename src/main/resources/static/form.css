@@ -1,0 +1,168 @@
+/* Stile generale per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambiato per evitare sovrapposizioni */
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Stile per il titolo principale */
+h1 {
+    color: #333;
+    font-family: 'Georgia', serif; /* Font diverso per i titoli */
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    margin-top: 300px; /* Abbassato ulteriormente il titolo */
+    position: relative; /* Posizionamento naturale */
+}
+
+/* Stile per il contenitore del form */
+form {
+    background-color: #fff;
+    padding: 15px; /* Ridotto il padding per un aspetto più compatto */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Ridotta la larghezza del form */
+    text-align: left; /* Allineamento a sinistra per il testo all'interno */
+    margin-top: 20px; /* Ridotto margine superiore */
+    margin-left: auto; /* Centra il form */
+    margin-right: auto; /* Centra il form */
+}
+
+/* Stile per le etichette */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Stile per i campi di input e i dropdown (select) */
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+select {
+    width: calc(100% - 20px); /* Allineamento delle barre */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Assicura che il padding non influenzi la larghezza */
+    -webkit-appearance: none; /* Rimuove stili predefiniti del browser per i select */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Stile per i messaggi di errore */
+div[th\\:if] {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Stile per il pulsante di conferma */
+button {
+    background-color: #333; /* Colore nero */
+    color: #fff;
+    padding: 20px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Verdana', sans-serif; /* Font diverso per i bottoni */
+    transition: background-color 0.3s ease;
+	font-size:15px;
+	margin-top: 8px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Stile per il pulsante "Torna alla Home" */
+.footer-link {
+    text-align: center;
+    margin-top: 20px; /* Distanza tra il form e il pulsante Torna alla Home */
+    margin-bottom: 20px; /* Distanza dal fondo */
+	margin-left:20px;
+}
+
+.footer-link a {
+    display: inline-block;
+    background-color: #333; /* Colore nero */
+    color: #fff;
+    padding: 3px 8px; /* Ridotto il padding per rendere il pulsante più piccolo */
+    text-decoration: none;
+    border-radius: 10px; /* Stessa arrotondatura del pulsante */
+    transition: background-color 0.3s ease;
+    font-family: 'Verdana', sans-serif; /* Stesso font del pulsante */
+    font-size: 12px !important; /* Ridotto il font per rendere il pulsante più piccolo */
+    border: none; /* Rimozione bordi predefiniti del link */
+    cursor: pointer;
+}
+
+.footer-link a:hover {
+    background-color: #555; /* Stesso effetto hover del pulsante */
+}
+
+
+/* Media Queries */
+
+/* Stili per schermi piccoli */
+@media (max-width: 767px) {
+    form {
+        width: 80%; /* Il form occupa una percentuale maggiore su schermi piccoli */
+        margin-top: 80px; /* Aggiunto margine per evitare sovrapposizioni */
+    }
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 150px; /* Abbassato ancora per schermi piccoli */
+    }
+    button {
+        padding: 10px 15px;
+    }
+    .footer-link a {
+        padding: 10px 15px; /* Padding coerente anche su schermi piccoli */
+        font-size: 14px;
+    }
+}
+
+/* Stili per schermi medi */
+@media (min-width: 768px) and (max-width: 1023px) {
+    form {
+        width: 400px; /* Form un po' più largo su schermi medi */
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    button {
+        padding: 15px 30px;
+    }
+    .footer-link a {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Stili per schermi grandi */
+@media (min-width: 1024px) {
+    form {
+        width: 500px; /* Form leggermente più grande su schermi grandi */
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    button {
+        padding: 20px 40px;
+    }
+    .footer-link a {
+        padding: 20px 40px; /* Stesso padding del pulsante su schermi grandi */
+        font-size: 18px;
+    }
+}
+

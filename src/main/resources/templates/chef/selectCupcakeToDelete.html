@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seleziona Cupcake da Eliminare</title>
+    <link rel="stylesheet" href="/static/form2.css">
+</head>
+<body>
+    <h1>Seleziona Cupcake da Eliminare</h1>
+    
+	<ul th:if="${cupcakes}">
+	    <li th:each="cupcake : ${cupcakes}">
+	        <span th:text="${cupcake.name} + ' - €' + ${cupcake.price}">Nome Prezzo</span>
+	        <form th:action="@{/chef/deleteCupcake/{id}(id=${cupcake.id})}" method="post" style="display:inline;">
+	            <button type="submit" style="color: red; background: none; border: none; text-decoration: none; cursor: pointer;">Elimina</button>
+	        </form>
+	    </li>
+	</ul>
+    <!-- Link per tornare alla home admin -->
+    <div class="footer-link">      
+        <a th:href="@{/chef/indexChef}">Torna alla Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seleziona Cupcake da Modificare</title>
+    <link rel="stylesheet" href="/static/form2.css">
+</head>
+<body>
+    <h1>Seleziona Cupcake da Modificare</h1>
+    
+    <!-- Lista dei cupcake -->
+    <ul>
+        <li th:each="cupcake : ${cupcakes}">
+            <span th:text="${cupcake.name} + ' - €' + ${cupcake.price}">Nome Prezzo</span>
+            <a th:href="@{/chef/formEditCupcake/{id}(id=${cupcake.id})}">Modifica</a>
+        </li>
+    </ul>
+    
+    <!-- Link per tornare alla home admin -->
+    <div class="footer-link">      
+        <a th:href="@{/chef/indexChef}">Torna alla Home</a>
+    </div>
+</body>
+</html>

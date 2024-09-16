@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Nuovo Cupcake
+    </title>
+    <link rel="stylesheet" href="/static/form.css">
+</head>
+
+<body>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <h1>Aggiungi un nuovo Cupcake</h1>
+
+    <!-- Form per aggiungere un nuovo Cupcake -->
+    <form th:action="@{/chef/indexCupcake}" method="POST" th:object="${cupcake}">
+        <div>
+            <span th:if="${messaggioErrore != null}" th:text="${messaggioErrore}">Errore</span>
+        </div>
+
+        <!-- Dati del cupcake -->
+        <div>
+            <label>Nome:</label> 
+            <span><input required type="text" th:field="*{name}" /></span>
+        </div>
+
+        <div>
+            <label>Prezzo:</label> 
+            <span><input required type="number" step="0.01" th:field="*{price}" /></span>
+        </div>
+
+        <!-- Pulsante di conferma -->
+        <div>
+            <span><button type="submit">Conferma</button></span>
+        </div>
+    </form>
+
+    <!-- Link per tornare alla home admin -->
+    <div class="footer-link">
+        <a th:href="@{/chef/indexChef}">Torna alla Home</a>
+    </div>
+</body>
+
+</html>

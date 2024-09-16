@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Nuovo Chef</title>
+    <link rel="stylesheet" href="/static/form.css">
+</head>
+
+<body>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <h1>Aggiungi Chef</h1>
+    <div th:if="${successMessage}" th:text="${successMessage}" style="color: green;"></div>
+
+    <!-- Messaggio di errore -->
+    <div th:if="${errorMessage}" th:text="${errorMessage}" style="color: red;"></div>
+
+    <!-- Form per aggiungere lo Chef -->
+    <form th:action="@{/admin/chef}" method="POST" th:object="${chef}">
+        <!-- Sezione per mostrare eventuali messaggi di errore -->
+        <div>
+            <span th:if="${messaggioErrore}" th:text="${messaggioErrore}">Errore</span>
+        </div>
+
+        <!-- Campo per il nome dello Chef -->
+        <div>
+            <label>Nome:</label>
+            <span><input required type="text" th:field="*{name}" /></span>
+        </div>
+
+        <!-- Campo per il cognome dello Chef -->
+        <div>
+            <label>Cognome:</label>
+            <span><input required type="text" th:field="*{surname}" /></span>
+        </div>
+
+        <!-- Campo per la data di nascita dello Chef -->
+        <div>
+            <label>Data di nascita:</label>
+            <span><input type="date" th:field="*{dateOfBirth}" /></span>
+        </div>
+
+        <!-- Campo per il codice fiscale (cf) dello Chef -->
+        <div>
+            <label>Codice Fiscale:</label>
+            <span><input required type="text" th:field="*{cf}" /></span>
+        </div>
+
+        <!-- Campo per la città dello Chef -->
+        <div>
+            <label>Citta:</label>
+            <span><input required type="text" th:field="*{city}" /></span>
+        </div>
+
+        <!-- Credenziali per il Presidente -->
+        <h3>Crea le credenziali per lo chef</h3>
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required="required"/>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required="required"/>
+        </div>
+
+        <button type="submit">Salva Chef</button>
+    </form>
+
+    <div class="footer-link">
+        <a th:href="@{/admin/indexAdmin}">Torna alla Home</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Dettagli Cupcake</title>
+    <link rel="stylesheet" href="/static/index2.css">
+</head>
+
+<body>
+    
+
+    <h1>Dettagli Cupcake</h1>
+
+    <div th:if="${cupcake}">
+        <!-- Visualizza la foto del cupcake -->
+        <div>
+            <img th:src="@{${cupcake.imageUrl}}" alt="Foto del Cupcake" style="max-width: 300px;" />
+        </div>
+
+        <p>
+            <strong>Nome:</strong> <span th:text="${cupcake.name}"></span>
+        </p>
+        <p>
+            <strong>Prezzo:</strong> €<span th:text="${cupcake.price}"></span>
+        </p>
+    </div>
+
+    <div th:unless="${cupcake}">
+        <p>Il cupcake non esiste.</p>
+    </div>
+
+    <!-- Link per tornare alla home admin -->
+    <div class="footer-link">
+        <a th:href="@{/}">Torna alla Home</a>
+    </div>
+</body>
+
+</html>

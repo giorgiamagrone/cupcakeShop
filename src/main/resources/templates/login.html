@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Login</title>
+   <link rel="stylesheet" href="/static/login.css">
+</head>
+
+<body>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <h1>Login</h1>
+
+    <form th:action="@{/login}" method="POST">
+        <!-- Etichetta per il campo Username -->
+        <div>
+            <label for="username">Username:</label>
+            <input id="username" name="username" type="text" required />
+        </div>
+
+        <!-- Etichetta per il campo Password -->
+        <div>
+            <label for="password">Password:</label>
+            <input id="password" name="password" type="password" required />
+        </div>
+
+        <!-- Token CSRF per la protezione -->
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+
+        <!-- Messaggio di errore in caso di credenziali errate -->
+        <div>
+            <span th:if="${param.error != null}">Username o password errati</span>
+        </div>
+        
+        <!-- Pulsante di login -->
+        <div>
+            <button type="submit">Login</button>
+        </div>
+    </form>
+
+    <!-- Ancora per tornare alla homepage -->
+    <div class="footer-link">
+        <a th:href="@{/}">Torna alla homepage</a>
+    </div>
+
+</body>
+
+</html>

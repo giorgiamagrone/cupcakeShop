@@ -1,0 +1,185 @@
+/* Stile generale per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Stile per il titolo principale */
+h1 {
+    color: #333;
+    font-family: 'Georgia', serif; /* Font diverso per i titoli */
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+    position: fixed; /* Rende il titolo fisso */
+    top: 0;
+    background-color: #f4f4f4; /* Sfondo per evitare sovrapposizioni */
+    padding: 10px 0;
+    z-index: 1000; /* Assicura che il titolo sia sopra gli altri elementi */
+}
+
+/* Stile per il contenitore del form */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    text-align: left;
+    margin-top: 60px; /* Aumenta lo spazio per il titolo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stile per le etichette */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Stile per i campi di input, inclusi i campi per anni */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%; /* Campi della stessa larghezza */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Assicura che padding e larghezza siano inclusi nelle dimensioni */
+    max-width: 400px; /* Dimensione massima per evitare campi troppo lunghi */
+}
+
+/* Stile per i messaggi di errore */
+div[th\\:if] {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+/* Stile per il pulsante di conferma */
+button {
+    background-color: #333; /* Colore nero */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Verdana', sans-serif; /* Font diverso per i bottoni */
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Stile per il link "Torna alla Home" */
+.footer-link {
+    position: fixed;
+    bottom: 30px;
+    text-align: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.footer-link a {
+    display: inline-block;
+    background-color: #333; /* Colore nero */
+    color: #fff;
+    padding: 5px 10px; /* Ridotto per renderlo più piccolo */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 15px !important; /* Font più piccolo */
+}
+
+.footer-link a:hover {
+    background-color: #555;
+}
+
+/* Stile per il blocco "Logout" */
+header div {
+    position: fixed;
+    top: 10px; /* Abbassato rispetto all'altezza della pagina */
+    right: 20px;
+    font-size: 14px;
+}
+
+/* Stile per il link di logout */
+header div a {
+    margin-left: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+header div a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+
+/* Stili per schermi piccoli */
+@media (max-width: 767px) {
+    form {
+        width: 90%;
+        margin-top: 60px; /* Aumenta lo spazio per il titolo */
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    button {
+        padding: 10px 15px;
+    }
+    .footer-link a {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Stili per schermi medi */
+@media (min-width: 768px) and (max-width: 1023px) {
+    form {
+        width: 80%;
+        margin-top: 60px; /* Aumenta lo spazio per il titolo */
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    button {
+        padding: 15px 30px;
+    }
+    .footer-link a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
+
+/* Stili per schermi grandi */
+@media (min-width: 1024px) {
+    form {
+        width: 70%;
+        margin-top: 60px; /* Aumenta lo spazio per il titolo */
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    button {
+        padding: 20px 40px;
+    }
+    .footer-link a {
+        padding: 15px 30px;
+        font-size: 18px;
+    }
+}

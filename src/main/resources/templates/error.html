@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<link rel="stylesheet" href="/static/error.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Errore Generale</title>
+</head>
+<body>
+    <h1>Oops! Qualcosa e' andato storto.</h1>
+    <p>Ci scusiamo per l'inconveniente, si e' verificato un errore inaspettato.</p>
+    <p th:text="'Codice errore: ' + ${status}"></p>
+    <p th:text="'Messaggio: ' + ${error}"></p>
+    <a href="/" th:href="@{/}">Torna alla Home</a>
+</body>
+</html>

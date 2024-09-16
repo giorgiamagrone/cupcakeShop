@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Cerca Cupcake</title>
+  <link rel="stylesheet" href="/static/form2.css">
+</head>
+
+<body>
+<h1>Cerca Cupcake per Nome</h1>
+
+  <!-- Form per cercare un cupcake in base al nome -->
+  <form th:action="@{/formSearchCupcake}" th:object="${searchCupcake}" method="post">
+    <div>
+      Nome: <input type="text" th:field="*{name}" required/>
+      <!-- Messaggi di errore per il campo nome -->
+      <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+    </div>
+    <button type="submit">Cerca Cupcake</button>
+  </form>
+
+  <!-- Mostra i risultati solo se ci sono cupcake o è stato effettuato un tentativo di ricerca -->
+  <div th:if="${cupcakes != null}">
+    <div th:if="${cupcakes.isEmpty()}">
+      Nessun cupcake trovato per il nome specificato.
+    </div>
+  </div>
+
+  <!-- Ancora per tornare alla home -->
+  <div class="footer-link">
+    <a th:href="@{/}">Torna alla Home</a>
+  </div>
+
+</body>
+</html>

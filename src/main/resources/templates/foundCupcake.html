@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cupcake</title>
+	<link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+	<header>
+		<div th:if="${userDetails}">
+			<span th:text="${userDetails.username}"></span>
+			<a href="/logout">Logout</a>
+		</div>
+		<div th:unless="${user}">
+			<a href="/login">Login</a>
+		</div>
+	</header>
+
+	<h1>Cupcake che soddisfano i requisiti</h1>
+
+	<!-- Messaggio se non ci sono cupcake che soddisfano i requisiti -->
+	<div th:if="${cupcakes.isEmpty()}">Non ci sono cupcake che soddisfano i requisiti</div>
+	
+	<!-- Lista di cupcake se esistono -->
+	<ul th:if="${!cupcakes.isEmpty()}">
+		<li th:each="cupcake : ${cupcakes}">
+			<a href="cupcake.html" th:href="@{'/cupcake' + '/' + ${cupcake.id}}"
+				th:text="${cupcake.name} + ' - €' + ${cupcake.price}"></a>
+		</li>
+	</ul>
+
+	<!-- Link per tornare alla home -->
+	<div class="footer-link">
+		<a th:href="@{/}">Torna alla Home</a>
+	</div>
+</body>
+
+</html>

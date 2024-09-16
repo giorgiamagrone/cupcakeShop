@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SiwCake - Homepage</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+    <!-- Header con opzione di login -->
+    <header>
+        <div>
+            <a th:href="@{/login}">Login</a>
+        </div>
+    </header>
+
+    <!-- Spazio per l'immagine del ristorante -->
+    <section>
+        <h1>Benvenuti da SiwCake!</h1>
+        <div>
+            <img src="/static/restaurant.jpg" alt="Immagine del Ristorante" style="width: 100%; height: auto;">
+        </div>
+    </section>
+
+    <!-- Sezione per gli utenti non loggati -->
+    <section>
+        <h2>Esplora i nostri cupcake</h2>
+        
+        <!-- Visualizza la lista dei cupcake -->
+        <div>
+            <a th:href="@{/cupcakes}">Vedi la lista completa dei cupcake</a>
+        </div>
+
+		<div>
+		        <a th:href="@{/formSearchCupcake}">Cerca un cupcake</a>
+		    </div>
+    </section>
+  
+</body>
+
+</html>

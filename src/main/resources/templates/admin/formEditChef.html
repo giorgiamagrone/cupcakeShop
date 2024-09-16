@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SiwSport - Modifica Chef</title>
+    <link rel="stylesheet" href="/static/form2.css">
+</head>
+<body>
+    <header>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
+    </header>
+
+    <h1>Modifica Chef</h1>
+
+    <!-- Form per modificare lo Chef -->
+    <form th:object="${chef}" th:action="@{/admin/editChef}" method="post">
+        <!-- Campo per il nome dello Chef -->
+        <div>
+            <label for="name">Nome</label>
+            <input type="text" id="name" th:field="*{name}" />
+        </div>
+
+        <!-- Campo per il cognome dello Chef -->
+        <div>
+            <label for="surname">Cognome</label>
+            <input type="text" id="surname" th:field="*{surname}" />
+        </div>
+
+        <!-- Campo per il codice fiscale (cf) dello Chef -->
+        <div>
+            <label for="cf">Codice Fiscale</label>
+            <input type="text" id="cf" th:field="*{cf}" />
+        </div>
+
+        <!-- Campo per la città dello Chef -->
+        <div>
+            <label for="city">Città</label>
+            <input type="text" id="city" th:field="*{city}" />
+        </div>
+
+        <!-- Pulsante per salvare le modifiche -->
+        <div>
+            <button type="submit">Salva modifiche</button>
+        </div>
+    </form>
+
+    <div class="footer-link">
+        <a href="/admin/indexAdmin">Torna alla home</a>
+    </div>
+
+</body>
+</html>
