@@ -4,41 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestione Chef - Admin</title>
-    <link rel="stylesheet" href="/static/index2.css"> 
+    <link rel="stylesheet" href="/static/index5.css"> 
 </head>
 <body>
     <header>
         <h1>Pannello di Controllo Admin - Gestione Chef</h1>
-		       <div th:if="${userDetails}">
-		           <span th:text="${userDetails.username}"></span>
-		           <a href="/logout">Logout</a>
-		       </div>
+        <div th:if="${userDetails}">
+            <span th:text="${userDetails.username}"></span>
+            <a href="/logout">Logout</a>
+        </div>
     </header>
 
     <main>
         <section>
             <h2>Operazioni disponibili</h2>
-            <ul>
-                <li>
-                    <form action="/admin/formNewChef" method="get">
-                        <button type="submit">Aggiungi un nuovo Chef</button>
-                    </form>
-                </li>
-
-                <li>
-                    <form action="/admin/formEditChef" method="get">
-                        <button type="submit">Modifica Chef</button>
-                    </form>
-                </li>
-
-                <li>
-                    <form action="/admin/deleteChef" method="get" onsubmit="return confirm('Sei sicuro di voler eliminare lo Chef?');">
-                        <button type="submit">Elimina Chef</button>
-                    </form>
-                </li>
-            </ul>
+            <div>
+                <a href="/admin/formNewChef">Aggiungi un nuovo Chef</a> <!-- Link per il form di aggiunta di un nuovo Chef -->
+            </div>
+            <div>
+                <a href="/admin/formEditChef">Modifica Chef</a> <!-- Link per modificare uno Chef -->
+            </div>
+            <div>
+                <a href="/admin/deleteChef" onclick="return confirm('Sei sicuro di voler eliminare lo Chef?');">Elimina Chef</a> <!-- Link per eliminare uno Chef con conferma -->
+            </div>
         </section>
     </main>
-
 </body>
 </html>

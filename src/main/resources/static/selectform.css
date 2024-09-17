@@ -1,0 +1,145 @@
+/* Stile generale per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec; /* Colore di sfondo rosa chiaro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Stile per l'intestazione */
+header {
+    background: linear-gradient(90deg, #e91e63, #9c27b0); 
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+/* Stile per il titolo principale */
+h1 {
+    color: #ad1457; 
+    font-family: 'Tahoma', sans-serif; /* Font diverso per i titoli */
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* Stile per il contenitore della lista */
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Stile per gli elementi della lista */
+li {
+    background-color: #fff;
+    padding: 20px; /* Aumentato il padding per creare spazio per i bottoni */
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Adattato alla larghezza del contenitore */
+    text-align: center; /* Centra il testo orizzontalmente */
+}
+
+/* Stile per il link nell'elemento della lista */
+li a {
+    display: block; /* Rende il link un blocco */
+    color: #fff;
+    background-color: #9c27b0; /* Viola */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 20px; /* Aumentato il padding per rendere i bottoni più grandi */
+    border-radius: 10px; /* Arrotondamento dei bordi */
+    transition: background-color 0.3s ease;
+    width: 100%; /* Riempie l'intera larghezza del contenitore */
+    height: 100%; /* Riempie l'intera altezza del contenitore */
+    box-sizing: border-box; /* Include il padding nella larghezza totale */
+}
+
+/* Cambia il colore del bottone al passaggio del mouse */
+li a:hover {
+    background-color: #ad1457; /* Rosa più scuro al passaggio del mouse */
+}
+
+/* Stile per il testo del prezzo */
+li span {
+    color: #ad1457; /* Rosa scuro */
+    margin-left: 10px;
+}
+
+/* Stile per il messaggio di nessun giocatore */
+p {
+    color: #666;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Stile per il link "Torna alla Home" */
+.footer-link {
+    margin-top: auto;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-link a {
+    display: inline-block;
+    background-color: #9c27b0; /* Viola scuro */
+    color: #fff;
+    padding: 15px 40px; /* Aumentato il padding per bottoni più grandi */
+    text-decoration: none;
+    border-radius: 10px; /* Arrotondato */
+    transition: background-color 0.3s ease;
+    font-size: 18px; /* Font leggermente più grande */
+}
+
+.footer-link a:hover {
+    background-color: #ad1457; /* Rosa più scuro al passaggio del mouse */
+}
+
+/* Nuovo stile per il titolo h2 */
+h2 {
+    color: #9c27b0; /* Viola */
+    font-family: 'Comic Sans MS', sans-serif;
+    margin: 20px 0;
+    text-align: center;
+}
+
+
+.error {
+    color: #fff;
+    background-color: #e91e63; /* Sfondo rosa scuro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Stile per i messaggi di errore con il tag <p> */
+p.error {
+    color: #fff;
+    background-color: #e91e63; /* Sfondo rosa scuro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

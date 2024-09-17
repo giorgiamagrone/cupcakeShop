@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Seleziona Cupcake da Modificare</title>
-    <link rel="stylesheet" href="/static/form.css">
+    <link rel="stylesheet" href="/static/selectform.css">
 </head>
 <body>
     <h1>Seleziona Cupcake da Modificare</h1>
@@ -12,7 +12,7 @@
         <li th:each="cupcake : ${cupcakes}">
             <span th:text="${cupcake.name} + ' - €' + ${cupcake.price}">Nome Prezzo</span>
             <form th:action="@{/chef/formEditCupcake/{id}(id=${cupcake.id})}" method="get" style="display:inline;">
-                <button type="submit" style="color: purple; background: none; border: none; text-decoration: underline; cursor: pointer;">Modifica</button>
+                <button type="submit" style="color: black; background: none; border: none; text-decoration: underline; cursor: pointer;">Modifica</button>
             </form>
         </li>
     </ul>

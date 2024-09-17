@@ -40,7 +40,7 @@ header div {
 }
 
 header div span {
-    margin-right: 10px; /* Distanza tra lo username e il pulsante di logout */
+    margin-right: -50px; /* Distanza tra lo username e il pulsante di logout */
 }
 
 /* Stile per il pulsante di logout */
@@ -97,6 +97,8 @@ div a {
     font-weight: bold;
     width: 300px; /* Larghezza maggiore per i pulsanti */
     box-sizing: border-box; /* Assicura che il padding sia incluso nella larghezza */
+        margin-left:80px;
+    
 }
 
 div a:hover {

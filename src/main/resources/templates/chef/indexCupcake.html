@@ -3,23 +3,25 @@
 
 <head>
     <title>Dettagli Cupcake</title>
-    <link rel="stylesheet" href="/static/form2.css">
+    <link rel="stylesheet" href="/static/index3.css">
 </head>
 
 <body>
     <header>
+		<h1>Dettagli Cupcake</h1>
         <div th:if="${userDetails}">
             <span th:text="${userDetails.username}"></span>
             <a href="/logout">Logout</a>
         </div>
     </header>
 
-    <h1>Dettagli Cupcake</h1>
+    
 
     <div th:if="${cupcake}">
         <!-- Visualizza la foto del cupcake -->
         <div>
-            <img th:src="@{${cupcake.imageUrl}}" alt="Foto del Cupcake" style="max-width: 300px;" />
+            <img th:src="@{|${cupcake.imageUrl}|}" alt="Foto del Cupcake" style="max-width: 300px;" />
+
         </div>
 
         <p>
@@ -36,7 +38,7 @@
 
     <!-- Link per tornare alla home admin -->
     <div class="footer-link">
-        <a th:href="@{/chef/indexChef}">Torna alla Home</a>
+        <a th:href="@{/chef/indexCupcakes}">Torna alla lista</a>
     </div>
 </body>
 

@@ -3,18 +3,19 @@
 
 <head>
     <title>Cupcakes</title>
-    <link rel="stylesheet" href="/static/index4.css">
+    <link rel="stylesheet" href="/static/index2.css">
 </head>
 
 <body>
     <header>
+		<h1>Lista dei Cupcake disponibili</h1>
         <div th:if="${userDetails}">
             <span th:text="${userDetails.username}"></span>
             <a href="/logout">Logout</a>
         </div>
     </header>
 
-    <h1>Lista dei Cupcake disponibili</h1>
+   
 
     <!-- Messaggio se non ci sono cupcake -->
     <div th:if="${cupcakes == null || cupcakes.isEmpty()}">

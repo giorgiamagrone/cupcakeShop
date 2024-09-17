@@ -22,8 +22,9 @@ public class Cupcake {
     @Positive
     private Double price;  // Prezzo del cupcake
 
-    private String imageUrl; // Aggiungi questa proprietà
-
+    private String imageUrl;
+    
+    
     // Getter e Setter per imageUrl
     public String getImageUrl() {
         return imageUrl;

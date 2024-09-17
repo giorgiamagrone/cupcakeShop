@@ -3,18 +3,19 @@
 
 <head>
     <title>Dettagli Cupcake</title>
-    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/index3.css">
 </head>
 
 <body>
     
-
+<header>
     <h1>Dettagli Cupcake</h1>
-
+</header>
     <div th:if="${cupcake}">
         <!-- Visualizza la foto del cupcake -->
         <div>
-            <img th:src="@{${cupcake.imageUrl}}" alt="Foto del Cupcake" style="max-width: 300px;" />
+            <img th:src="@{|${cupcake.imageUrl}|}" alt="Foto del Cupcake" style="max-width: 300px;" />
+
         </div>
 
         <p>

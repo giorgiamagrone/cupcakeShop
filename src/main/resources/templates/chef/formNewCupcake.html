@@ -2,9 +2,7 @@
 <html>
 
 <head>
-    <title>
-        Nuovo Cupcake
-    </title>
+    <title>Nuovo Cupcake</title>
     <link rel="stylesheet" href="/static/form2.css">
 </head>
 
@@ -21,26 +19,29 @@
     <!-- Form per aggiungere un nuovo Cupcake -->
     <form th:action="@{/chef/indexCupcake}" method="POST" th:object="${cupcake}" enctype="multipart/form-data">
         <div>
-            <span th:if="${messaggioErrore != null}" th:text="${messaggioErrore}">Errore</span>
+            <span th:if="${errorMessage != null}" th:text="${errorMessage}">Errore</span>
+            <span th:if="${successMessage != null}" th:text="${successMessage}"></span>
         </div>
 
         <!-- Dati del cupcake -->
         <div>
-            <label>Nome:</label> 
+            <label>Nome:</label>
             <span><input required type="text" th:field="*{name}" /></span>
         </div>
 
         <div>
-            <label>Prezzo:</label> 
+            <label>Prezzo:</label>
             <span><input required type="number" step="0.01" th:field="*{price}" /></span>
         </div>
-		<div>
-		        <label for="image">Carica immagine:</label>
-		        <input type="file" id="image" name="image" accept="image/*" required>
-		    </div>
+
+        <div>
+            <label for="image">Carica immagine:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+        </div>
+
         <!-- Pulsante di conferma -->
         <div>
-            <span><button type="submit">Conferma</button></span>
+            <span><button type="submit">Aggiungi Cupcake</button></span>
         </div>
     </form>
 
@@ -50,4 +51,4 @@
     </div>
 </body>
 
-</html>
+</
