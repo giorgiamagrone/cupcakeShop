@@ -29,7 +29,7 @@ public class CupcakeController {
     @Autowired
     private CredentialsService credentialsService;
 
-    @GetMapping("/cupcakes/{id}")
+    @GetMapping("/cupcake/{id}")
     public String viewCupcake(@PathVariable("id") Long id, Model model) {
         // Find the cupcake by ID
         Cupcake cupcake = cupcakeRepository.findById(id)
@@ -40,7 +40,17 @@ public class CupcakeController {
         
         return "/cupcake";  // Return the Thymeleaf template for cupcake details
     }
-
+    @GetMapping("/cupcakes/{id}")
+    public String viewCupcakes(@PathVariable("id") Long id, Model model) {
+        // Find the cupcake by ID
+        Cupcake cupcake = cupcakeRepository.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Invalid cupcake ID: " + id));
+        
+        // Add cupcake to the model
+        model.addAttribute("cupcake", cupcake);
+        
+        return "/cupcake";  // Return the Thymeleaf template for cupcake details
+    }
     @GetMapping("/cupcakes")
     public String viewAllCupcakes(Model model) {
         // Get all cupcakes
@@ -174,5 +184,17 @@ public class CupcakeController {
         cupcakeRepository.deleteById(id);
 
         return "redirect:/chef/selectCupcakeToDelete";  // Redirect after deletion
+    }
+    
+    @GetMapping("/formSearchCupcake")
+    public String showSearchForm(Model model) {
+        model.addAttribute("searchCupcake", new Cupcake());
+        return "formSearchCupcake";  
+    }
+
+    @PostMapping("/formSearchCupcake")
+    public String searchCupcake(Model model, @RequestParam("name") String name) {
+        model.addAttribute("cupcakes", this.cupcakeRepository.findByName(name));
+        return "foundCupcake";
     }
 }

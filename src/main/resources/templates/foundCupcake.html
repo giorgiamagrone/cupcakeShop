@@ -2,15 +2,11 @@
 <html>
 <head>
 	<title>Cupcake</title>
-	<link rel="stylesheet" href="/static/index.css">
+	<link rel="stylesheet" href="/static/selectform.css">
 </head>
 
 <body>
 	<header>
-		<div th:if="${userDetails}">
-			<span th:text="${userDetails.username}"></span>
-			<a href="/logout">Logout</a>
-		</div>
 		<div th:unless="${user}">
 			<a href="/login">Login</a>
 		</div>
