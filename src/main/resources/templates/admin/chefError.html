@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<link rel="stylesheet" href="/static/error.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Errore Chef</title>
+</head>
+<body>
+    <h1>Attenzione!</h1>
+    <p>Esiste già uno chef nel sistema. Non è possibile aggiungerne un altro.</p>
+    <a th:href="@{/admin/formEditChef}">Modifica lo Chef esistente</a>
+</body>
+</html>

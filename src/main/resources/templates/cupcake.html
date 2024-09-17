@@ -3,7 +3,7 @@
 
 <head>
     <title>Dettagli Cupcake</title>
-    <link rel="stylesheet" href="/static/index2.css">
+    <link rel="stylesheet" href="/static/index.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
             <strong>Nome:</strong> <span th:text="${cupcake.name}"></span>
         </p>
         <p>
-            <strong>Prezzo:</strong> €<span th:text="${cupcake.price}"></span>
+            <strong>Prezzo:</strong> <span th:text="${cupcake.price + ' €'}"></span>
         </p>
     </div>
 

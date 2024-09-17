@@ -3,7 +3,8 @@
 
 <head>
     <title>Cupcakes</title>
-    <link rel="stylesheet" href="/static/index2.css">
+    <meta charset="UTF-8"> <!-- Aggiunta la codifica UTF-8 -->
+    <link rel="stylesheet" href="/static/index4.css">
 </head>
 
 <body>
@@ -19,8 +20,8 @@
     <div th:if="${cupcakes != null && !cupcakes.isEmpty()}">
         <ul>
             <li th:each="cupcake : ${cupcakes}">
-                <a th:href="@{/cupcakes/{id}(id=${cupcake.id})}" 
-                   th:text="${cupcake.name} + ' - €' + ${cupcake.price}"></a>
+                <a th:href="@{/cupcakes/{id}(id=${cupcake.id})}"
+                   th:text="${cupcake.name} "></a>
             </li>
         </ul>
     </div>
@@ -29,6 +30,7 @@
     <div class="footer-link">
         <a th:href="@{/}">Torna alla Home</a>
     </div>
+
 </body>
 
 </html>

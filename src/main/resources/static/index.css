@@ -3,22 +3,35 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #fce4ec; /* Colore di sfondo rosa chiaro */
+    padding-top: 100px; /* Aggiunto padding per evitare la sovrapposizione dell'header fisso */
 }
 
-/* Stile per l'intestazione */
+/* Stile per l'header */
 header {
-    background-color: #333;
+    background: linear-gradient(90deg, #e91e63, #9c27b0); /* Sfondo sfumato da rosa a viola */
     color: #fff;
-    padding: 2px 0;
+    padding: 10px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunta di ombra */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Stile per i link nell'intestazione */
+/* Stile per i link nell'header */
 header a {
     color: #fff;
     text-decoration: none;
     margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #ffebee; /* Colore più chiaro al passaggio del mouse */
 }
 
 /* Stile per il benvenuto */
@@ -28,7 +41,7 @@ header span {
 
 /* Stile per il titolo principale */
 h1 {
-    color: #333;
+    color: #9c27b0; /* Viola */
     text-align: center;
     margin-top: 20px;
     font-family: 'Georgia', serif; /* Font diverso per i titoli */
@@ -42,7 +55,7 @@ div {
 
 div a {
     display: inline-block;
-    background-color: #333; /* Colore nero */
+    background-color: #e91e63; /* Rosa scuro */
     color: #fff;
     padding: 10px 20px;
     text-decoration: none;
@@ -52,21 +65,21 @@ div a {
 }
 
 div a:hover {
-    background-color: #555;
+    background-color: #ad1457; /* Rosa più scuro al passaggio del mouse */
 }
 
 /* Stile per i dettagli della squadra */
 div span {
     display: block;
     font-size: 18px;
-    color: #333;
+    color: #9c27b0; /* Viola */
     margin: 10px 0;
     font-family: 'Courier New', Courier, monospace; /* Font diverso per i nomi delle squadre */
 }
 
 /* Stile per i dettagli del presidente */
 h2 {
-    color: #333;
+    color: #9c27b0; /* Viola */
     text-align: center;
     margin-top: 20px;
     font-family: 'Georgia', serif; /* Font diverso per i titoli */
@@ -81,9 +94,18 @@ p {
 /* Stile per i nomi delle squadre nella lista */
 ul.team-list li {
     font-family: 'Courier New', Courier, monospace; /* Font diverso per i nomi delle squadre */
-    color: purple; /* Colore viola per i nomi delle squadre */
+    color: #e91e63; /* Rosa */
     font-size: 18px;
     margin: 5px 0;
+}
+
+/* Stile per le immagini ridotte */
+img {
+    max-width: 150px; /* L'immagine non sarà più grande di 150px */
+    height: auto; /* Mantiene le proporzioni */
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px; /* Aggiunta di angoli arrotondati */
 }
 
 /* Media Queries */

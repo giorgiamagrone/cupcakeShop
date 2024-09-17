@@ -1,0 +1,167 @@
+/* Stile generale per il corpo della pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fce4ec; /* Colore di sfondo rosa chiaro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 10px; /* Spazio per evitare sovrapposizione con header fisso */
+}
+
+/* Stile per l'intestazione */
+header {
+    background: linear-gradient(90deg, #e91e63, #9c27b0); 
+    color: #fff;
+    padding: 20px 0; /* Header più spesso */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aggiunta di ombra per evidenziare l'header */
+}
+
+/* Stile per il blocco utente e login/logout in alto a destra */
+header div {
+    position: absolute;
+    top: 8px;
+    right: 20px; /* Posiziona il blocco user details e logout a destra */
+    font-size: 12px; /* Testo piccolo */
+    display: flex;
+    align-items: center;
+}
+
+header div span {
+    margin-right: 10px; /* Distanza tra lo username e il pulsante di logout */
+}
+
+/* Stile per il pulsante di logout */
+header div a {
+    color: #fff;
+    background-color: #9c27b0; /* Viola scuro per il pulsante */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 10px; /* Font più piccolo per il pulsante */
+    padding: 5px 10px; /* Piccolo padding per ridurre la dimensione del pulsante */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    width: auto; /* Assicura che il pulsante non abbia larghezza fissa */
+    min-width: 50px; /* Forza una larghezza minima ridotta */
+    max-width: 100px; /* Imposta una larghezza massima */
+    text-align: center;
+    box-sizing: border-box; /* Assicura che il padding sia incluso nella larghezza */
+}
+
+header div a:hover {
+    background-color: #ad1457; /* Colore più chiaro al passaggio del mouse */
+}
+
+/* Stile per il titolo principale e secondario */
+h1, h2 {
+    color: #9c27b0; /* Viola scuro */
+    font-family: 'Georgia', serif; /* Font diverso per i titoli */
+    margin: 10px 0; /* Ridotto margine per avvicinare i titoli */
+    text-align: center;
+    font-size: 2.5rem; /* Stesso font-size per h1 e h2 */
+    font-weight: bold; /* Titoli in bold */
+}
+
+/* Stile per i pulsanti */
+div a {
+    display: inline-block;
+    background-color: #9c27b0; /* Viola scuro */
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 30px; /* Pulsanti più lunghi */
+    margin: 10px 0;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    width: 300px; /* Larghezza maggiore per i pulsanti */
+    box-sizing: border-box; /* Assicura che il padding sia incluso nella larghezza */
+}
+
+div a:hover {
+    background-color: #ad1457; /* Rosa più scuro al passaggio del mouse */
+}	/* Stile per il link "Torna alla Home" che scorre insieme alla pagina */
+	.footer-link {
+	    margin-top: 20px; /* Spazio dal contenuto */
+	    width: auto; /* Rimuove la larghezza fissa */
+	    align-self: flex-start; /* Allinea il link a sinistra */
+	}
+
+	.footer-link a {
+	    display: inline-block;
+	    background-color: #9c27b0; /* Viola scuro */
+	    color: #fff;
+	    padding: 5px 10px; /* Ridotto padding per rendere il pulsante più piccolo */
+	    text-decoration: none;
+	    border-radius: 5px;
+	    font-size: 12px; /* Font più piccolo per il link */
+	    font-weight: bold;
+	    min-width: 80px; /* Ridotta la larghezza minima del pulsante */
+	    max-width: 150px; /* Imposta una larghezza massima per evitare pulsanti troppo lunghi */
+	    text-align: center;
+	}
+
+	.footer-link a:hover {
+	    background-color: #ad1457; /* Colore più chiaro al passaggio del mouse */
+	}
+
+
+/* Media Queries */
+
+/* Stili per schermi piccoli */
+@media (max-width: 767px) {
+    header div {
+        right: 10px; /* Ridotta distanza dal bordo a destra */
+    }
+    h1, h2 {
+        font-size: 1.8rem;
+        margin-top: 60px; /* Aumentato margine per l'intestazione fissa */
+    }
+    div a {
+        padding: 15px 25px;
+        font-size: 0.9rem;
+        width: 250px; /* Pulsanti più lunghi per schermi piccoli */
+    }
+    .footer-link a {
+        padding: 5px 8px; /* Ridotto ulteriormente per schermi piccoli */
+        font-size: 10px; /* Font più piccolo per schermi piccoli */
+        min-width: 80px; /* Ancora più corto per schermi piccoli */
+    }
+}
+
+/* Stili per schermi medi */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header div {
+        right: 15px;
+    }
+    h1, h2 {
+        font-size: 2.2rem;
+    }
+    div a {
+        padding: 18px 28px;
+        font-size: 1rem;
+        width: 280px;
+    }
+}
+
+/* Stili per schermi grandi */
+@media (min-width: 1024px) {
+    header div {
+        right: 20px;
+    }
+    h1, h2 {
+        font-size: 2.5rem;
+    }
+    div a {
+        padding: 20px 30px;
+        font-size: 1.1rem;
+        width: 300px; /* Pulsanti più lunghi per schermi grandi */
+    }
+}

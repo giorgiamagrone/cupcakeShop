@@ -11,13 +11,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import it.cake.siw.model.Cupcake;
 import it.cake.siw.model.Credentials;
 import it.cake.siw.model.Chef;
 import it.cake.siw.repository.CupcakeRepository;
 import it.cake.siw.service.CredentialsService;
+import jakarta.persistence.criteria.Path;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
@@ -102,13 +108,43 @@ public class CupcakeController {
     }
 
     @PostMapping("/chef/indexCupcake")
-    public String newCupcake(@ModelAttribute Cupcake cupcake, BindingResult result, Model model) {
-        // Salva il cupcake
-        cupcakeRepository.save(cupcake);
+    public String newCupcake(@ModelAttribute Cupcake cupcake, 
+                             @RequestParam("image") MultipartFile imageFile, 
+                             BindingResult result, 
+                             Model model) {
+        if (result.hasErrors()) {
+            model.addAttribute("errorMessage", "Errore nell'inserimento del cupcake.");
+            return "chef/indexCupcake";  // Ritorna alla pagina con il form in caso di errore
+        }
 
-        model.addAttribute("successMessage", "Cupcake aggiunto con successo.");
-        return "redirect:/chef/indexCupcake/" + cupcake.getId();  // Redirect alla pagina di successo o al dettaglio del cupcake
+        try {
+            // Verifica se il file dell'immagine è stato caricato
+            if (!imageFile.isEmpty()) {
+                // Definisci il percorso di upload
+                String fileName = imageFile.getOriginalFilename();
+                String imagePath = System.getProperty("user.dir") + "/src/main/resources/static/images/" + fileName;
+
+                // Salva il file dell'immagine
+                File destinationFile = new File(imagePath);
+                imageFile.transferTo(destinationFile);
+
+                // Imposta il percorso dell'immagine nel cupcake
+                cupcake.setImageUrl("/images/" + fileName);  // Percorso relativo per l'accesso dal browser
+            }
+
+            // Salva il cupcake nel database
+            cupcakeRepository.save(cupcake);
+            model.addAttribute("successMessage", "Cupcake aggiunto con successo.");
+
+        } catch (IOException e) {
+            model.addAttribute("errorMessage", "Errore nel caricamento dell'immagine.");
+            e.printStackTrace();
+            return "chef/indexCupcake";  // Ritorna alla pagina con il form in caso di errore
+        }
+
+        return "redirect:/chef/indexCupcake/" + cupcake.getId();  // Redirect alla pagina del dettaglio del cupcake
     }
+
 
     @GetMapping("/chef/selectCupcakeToEdit")
     public String selectCupcakeToEdit(Model model) {

@@ -2,19 +2,21 @@
 <html>
 <head>
     <title>Seleziona Cupcake da Modificare</title>
-    <link rel="stylesheet" href="/static/form2.css">
+    <link rel="stylesheet" href="/static/form.css">
 </head>
 <body>
     <h1>Seleziona Cupcake da Modificare</h1>
     
     <!-- Lista dei cupcake -->
-    <ul>
+    <ul th:if="${cupcakes}">
         <li th:each="cupcake : ${cupcakes}">
             <span th:text="${cupcake.name} + ' - €' + ${cupcake.price}">Nome Prezzo</span>
-            <a th:href="@{/chef/formEditCupcake/{id}(id=${cupcake.id})}">Modifica</a>
+            <form th:action="@{/chef/formEditCupcake/{id}(id=${cupcake.id})}" method="get" style="display:inline;">
+                <button type="submit" style="color: purple; background: none; border: none; text-decoration: underline; cursor: pointer;">Modifica</button>
+            </form>
         </li>
     </ul>
-    
+
     <!-- Link per tornare alla home admin -->
     <div class="footer-link">      
         <a th:href="@{/chef/indexChef}">Torna alla Home</a>

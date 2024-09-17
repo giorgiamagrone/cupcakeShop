@@ -12,32 +12,38 @@
         </div>
     </header>
 
-    <h1>Modifica Chef</h1>
+    <h1>Modifica i dettagli dello chef</h1>
 
     <!-- Form per modificare lo Chef -->
     <form th:object="${chef}" th:action="@{/admin/editChef}" method="post">
         <!-- Campo per il nome dello Chef -->
         <div>
-            <label for="name">Nome</label>
+            <label for="name">Nome:</label>
             <input type="text" id="name" th:field="*{name}" />
         </div>
 
         <!-- Campo per il cognome dello Chef -->
         <div>
-            <label for="surname">Cognome</label>
+            <label for="surname">Cognome:</label>
             <input type="text" id="surname" th:field="*{surname}" />
         </div>
 
         <!-- Campo per il codice fiscale (cf) dello Chef -->
         <div>
-            <label for="cf">Codice Fiscale</label>
+            <label for="cf">Codice Fiscale:</label>
             <input type="text" id="cf" th:field="*{cf}" />
         </div>
 
         <!-- Campo per la città dello Chef -->
         <div>
-            <label for="city">Città</label>
+            <label for="city">Città:</label>
             <input type="text" id="city" th:field="*{city}" />
+        </div>
+
+        <!-- Campo per la data di nascita dello Chef -->
+        <div>
+            <label for="dateOfBirth">Data di Nascita:</label>
+            <input type="date" id="dateOfBirth" th:field="*{dateOfBirth}" />
         </div>
 
         <!-- Pulsante per salvare le modifiche -->

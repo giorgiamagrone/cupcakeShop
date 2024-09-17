@@ -5,7 +5,7 @@
     <title>
         Nuovo Cupcake
     </title>
-    <link rel="stylesheet" href="/static/form.css">
+    <link rel="stylesheet" href="/static/form2.css">
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <h1>Aggiungi un nuovo Cupcake</h1>
 
     <!-- Form per aggiungere un nuovo Cupcake -->
-    <form th:action="@{/chef/indexCupcake}" method="POST" th:object="${cupcake}">
+    <form th:action="@{/chef/indexCupcake}" method="POST" th:object="${cupcake}" enctype="multipart/form-data">
         <div>
             <span th:if="${messaggioErrore != null}" th:text="${messaggioErrore}">Errore</span>
         </div>
@@ -34,7 +34,10 @@
             <label>Prezzo:</label> 
             <span><input required type="number" step="0.01" th:field="*{price}" /></span>
         </div>
-
+		<div>
+		        <label for="image">Carica immagine:</label>
+		        <input type="file" id="image" name="image" accept="image/*" required>
+		    </div>
         <!-- Pulsante di conferma -->
         <div>
             <span><button type="submit">Conferma</button></span>

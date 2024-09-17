@@ -24,15 +24,14 @@ public class ChefController {
     @Autowired
     private CredentialsService credentialsService;
 
-    // Show form to add a new Chef
     @GetMapping("/admin/formNewChef")
     public String formNewChef(Model model) {
         if (chefRepository.count() > 0) {
             model.addAttribute("messaggioErrore", "Esiste già uno chef nel sistema.");
-            return "error";  // Show error if chef already exists
+            return "/admin/chefError"; 
         }
         model.addAttribute("chef", new Chef());
-        model.addAttribute("credentials", new Credentials()); // Add credentials to the model
+        model.addAttribute("credentials", new Credentials()); 
         return "admin/formNewChef";
     }
 
@@ -105,6 +104,7 @@ public class ChefController {
             Chef currentChef = existingChef.get();
             currentChef.setName(chef.getName());
             currentChef.setSurname(chef.getSurname());
+            currentChef.setDateOfBirth(chef.getDateOfBirth());
             
 
             // Save updated chef

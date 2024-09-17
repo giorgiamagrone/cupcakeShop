@@ -3,22 +3,22 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #fce4ec; /* Colore di sfondo rosa chiaro */
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Cambiato per evitare sovrapposizioni */
+    align-items: center; /* Cambiato per evitare sovrapposizioni */
     height: 100vh;
     flex-direction: column;
 }
 
 /* Stile per il titolo principale */
 h1 {
-    color: #333;
+    color: #9c27b0; /* Viola scuro */
     font-family: 'Georgia', serif; /* Font diverso per i titoli */
     margin-bottom: 20px;
     width: 100%;
     text-align: center;
-    margin-top: 300px; /* Abbassato ulteriormente il titolo */
+    margin-top: 350px; /* Abbassato ulteriormente il titolo */
     position: relative; /* Posizionamento naturale */
 }
 
@@ -39,7 +39,7 @@ form {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #9c27b0; /* Viola scuro */
 }
 
 /* Stile per i campi di input e i dropdown (select) */
@@ -50,7 +50,7 @@ select {
     width: calc(100% - 20px); /* Allineamento delle barre */
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #9c27b0; /* Viola scuro per i bordi */
     border-radius: 5px;
     box-sizing: border-box; /* Assicura che il padding non influenzi la larghezza */
     -webkit-appearance: none; /* Rimuove stili predefiniti del browser per i select */
@@ -68,7 +68,7 @@ div[th\\:if] {
 
 /* Stile per il pulsante di conferma */
 button {
-    background-color: #333; /* Colore nero */
+    background-color: #9c27b0; /* Viola scuro */
     color: #fff;
     padding: 20px 20px;
     border: none;
@@ -76,12 +76,12 @@ button {
     cursor: pointer;
     font-family: 'Verdana', sans-serif; /* Font diverso per i bottoni */
     transition: background-color 0.3s ease;
-	font-size:15px;
-	margin-top: 8px;
+    font-size: 15px;
+    margin-top: 8px;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #ad1457; /* Rosa più scuro al passaggio del mouse */
 }
 
 /* Stile per il pulsante "Torna alla Home" */
@@ -89,12 +89,12 @@ button:hover {
     text-align: center;
     margin-top: 20px; /* Distanza tra il form e il pulsante Torna alla Home */
     margin-bottom: 20px; /* Distanza dal fondo */
-	margin-left:20px;
+    margin-left: 20px;
 }
 
 .footer-link a {
     display: inline-block;
-    background-color: #333; /* Colore nero */
+    background-color: #9c27b0; /* Viola scuro */
     color: #fff;
     padding: 3px 8px; /* Ridotto il padding per rendere il pulsante più piccolo */
     text-decoration: none;
@@ -107,9 +107,8 @@ button:hover {
 }
 
 .footer-link a:hover {
-    background-color: #555; /* Stesso effetto hover del pulsante */
+    background-color: #ad1457; /* Stesso effetto hover del pulsante */
 }
-
 
 /* Media Queries */
 
@@ -165,4 +164,3 @@ button:hover {
         font-size: 18px;
     }
 }
-
